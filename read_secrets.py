@@ -7,4 +7,11 @@ def read_secrets() -> dict:
             return json.loads(f.read())
     except FileNotFoundError:
         return {}
-secrets = read_secrets()
+
+if __name__ == "__main__":
+  
+  print("Reading secrets.json")
+  secrets = read_secrets()
+  
+  print(f"Reddit username: {secrets['USERNAME']}")
+  print(f"Reddit app ID: {secrets['SCRIPT_ID']}")
